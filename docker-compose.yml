@@ -9,6 +9,7 @@ services:
       - rabbitmq-net
     volumes:
       - ./:/usr/src/app
+    command: "consumer.py"
     depends_on:
       - rabbit
 
@@ -20,6 +21,7 @@ services:
       - rabbitmq-net
     volumes:
       - ./:/usr/src/app
+    command: "producer.py"
     depends_on:
       - rabbit
 
