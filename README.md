@@ -27,8 +27,8 @@ Para iniciar a aplicação, basta executar o comando `docker-compose up`.
 
 Para acompanhar as execuções você pode acompar os logs dos containers.
 
-`Producer: docker logs producer -f`
-`Consumer: docker logs consumer -f`
+- `Producer: docker logs producer -f`
+- `Consumer: docker logs consumer -f`
 
 
 Se desejar, é possível visualizar as mensagens diretamente pelo painel do RabbitMQ.
