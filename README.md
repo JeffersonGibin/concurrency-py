@@ -11,10 +11,10 @@ A estrutura do projeto é composta por consumidores e produtores, responsáveis 
 </p>
 
 
-- **Producer:** Os consumidores são nossos cozinheiros na cozinha, trabalhando de forma concorrente e aguardando por novos pedidos.
-- **Consumer:** Os consumidores, representados pelos nossos cozinheiros na cozinha, trabalham de forma concorrente e ficam aguardando por novos pedidos dos clientes.
+- **Producer:** os produtores são nossos garçons, caminhando pelo restaurante e recebendo os pedidos das mesas. Eles também trabalham de forma concorrente.
+- **Consumer:** os consumidores, representados pelos nossos cozinheiros na cozinha, trabalham de forma concorrente e ficam aguardando por novos pedidos dos clientes.
 
-Cozinhore e Garçom são Threads responsáveis pela concorrência.
+Cozinheiro e Garçom são Threads responsáveis pela concorrência.
 
 - Cozinheiro (`Threads`)
 - Garçom (`Threads`)
