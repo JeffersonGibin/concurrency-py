@@ -10,7 +10,7 @@ A estrutura do projeto é composta por consumidores e produtores, responsáveis 
 Os consumidores são nossos cozinheiros na cozinha, trabalhando de forma concorrente e aguardando por novos pedidos.
 
 <p align="center">
-  <img src="arquitetura-simplificada.jpg" alt="DESENHO">
+  <img src="desenho.jpg" alt="DESENHO">
 </p>
 
 - Cozinheiro (`Threads`)
