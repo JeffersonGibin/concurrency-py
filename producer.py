@@ -1,10 +1,11 @@
 from src.restaurant import Restaurant
 from src.adapters.producer_rabbit import ProducerRabbitMQ
+from os import getenv
 
 settings = {
-    "amount_tables": 50,
-    "amount_waiters": 1,
-    "number_people_per_table": 5
+    "amount_tables": int(getenv("RESTAURANT_AMOUNT_TABLES")),
+    "amount_waiters": int(getenv("RESTAURANT_AMOUNT_WAITERS")),
+    "number_people_per_table": int(getenv("RESTAURANT_NUMBER_PEOPLE_PER_TABLE")),
 }
 
 print("Settings Execution")

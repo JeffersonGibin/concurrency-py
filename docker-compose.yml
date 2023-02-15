@@ -5,6 +5,8 @@ services:
     container_name: consumer
     build:
       context: .
+    environment:
+      - RESTAURANT_KITCHEN_AMOUNT_COOKS=5
     networks:
       - rabbitmq-net
     volumes:
@@ -17,6 +19,11 @@ services:
     container_name: producer
     build:
       context: .
+    environment:
+      - RESTAURANT_AMOUNT_TABLES=50
+      - RESTAURANT_AMOUNT_WAITERS=1
+      - RESTAURANT_NUMBER_PEOPLE_PER_TABLE=5
+      
     networks:
       - rabbitmq-net
     volumes:
