@@ -20,24 +20,24 @@ class Restaurant:
     def __operacoes_garcom(self):
         mesa, pedidos_mesa = self.__criar_mesa_com_pessoas()
 
-        ultimo_gacom_id = len(self.garcons) -1
-        garcom = self.garcons[ultimo_gacom_id]
-        garcom_id = garcom.id
+        last_waiter_id = len(self.garcons) -1
+        waiter: Waiter = self.garcons[last_waiter_id]
+        waiter_id = waiter.id
 
         for pedido in pedidos_mesa:
             dados_pedido = pedido.get()
             order_number = dados_pedido.get("order_number")
 
-            print(f"[x] Garçom {garcom_id} está anotando o pedido {order_number}")
-            garcom.anota_pedidos(pedido, mesa)
+            print(f"[x] Garçom {waiter_id} está anotando o pedido {order_number}")
+            waiter.write_orders(pedido, mesa)
 
-            tempo_simbolico = 0.0002 * garcom_id
+            tempo_simbolico = 0.0002 * waiter_id
             time.sleep(tempo_simbolico)
 
-            print(f"[x] Garçom {garcom_id} anotou o pedido {order_number}")
-            print(f"[x] Garçom {garcom_id} enviou o pedido {order_number} para cozinha")
+            print(f"[x] Garçom {waiter_id} anotou o pedido {order_number}")
+            print(f"[x] Garçom {waiter_id} enviou o pedido {order_number} para cozinha")
         
-        garcom.enviar_pedido_cozinha()
+        waiter.send_order_to_kitchen()
         time.sleep(1)
 
 
