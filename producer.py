@@ -2,19 +2,19 @@ from src.restaurante_producer import RestauranteProducer
 from src.adapters.producer_rabbit import ProducerRabbitMQ
 
 config = {
-    "quantidade_mesas": 50,
-    "quantidade_garcons": 1,
-    "quantidade_pessoas_por_mesa": 5
+    "amount_tables": 50,
+    "amount_waiters": 1,
+    "number_people_per_table": 5
 }
 
-print("Configuração da execução")
-print(f"[X] Quantidade de Mesas: {config['quantidade_mesas']}")
-print(f"[X] Quantidade de Garçons: {config['quantidade_garcons']}")
-print(f"[X] Quantidade de Pessoas Por Mesa: {config['quantidade_pessoas_por_mesa']}\n\n")
+print("Config Execution")
+print(f"[X] Amount Tables: {config['amount_tables']}")
+print(f"[X] Amount Waiters: {config['amount_waiters']}")
+print(f"[X] Amount People per table: {config['number_people_per_table']}\n\n")
 
 producer = ProducerRabbitMQ({
-    "queue": "pedido",
-    "routing_key": "pedido"
+    "queue": "order",
+    "routing_key": "order"
 })
 
 restaurante = RestauranteProducer(config, producer)

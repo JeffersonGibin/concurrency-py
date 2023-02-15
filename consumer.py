@@ -3,11 +3,11 @@ from src.cozinha import CozinhaConsumer
 from src.adapters.consumer_rabbit import ConsumerRabbitMQ
 
 config = {
-    "quantidade_cozinheiros": 5
+    "amount_cooks": 5
 }
 
 consumer_rabbitmq = ConsumerRabbitMQ({
-    "queue": "pedido"
+    "queue": "order"
 })
 
 cozinha = CozinhaConsumer(config, consumer_rabbitmq)

@@ -12,7 +12,7 @@ class CozinhaConsumer:
         cozinheiro.comeca_producao()
 
     def execute(self):
-        quantidade_cozinheiros: int = self.config.get("quantidade_cozinheiros")
+        quantidade_cozinheiros: int = self.config.get("amount_cooks")
 
         print(f"Aguardando Pedidos...")
 

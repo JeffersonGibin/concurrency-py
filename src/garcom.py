@@ -26,6 +26,7 @@ class Garcom:
 
     def enviar_pedido_cozinha(self):
         for pedido in self.pedidos:
-            self.producer.publish(pedido)
+            # self.producer.publish(pedido)
+            pass
 
 

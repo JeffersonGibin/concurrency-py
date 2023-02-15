@@ -15,7 +15,7 @@ class RestauranteProducer:
         self.producer = producer
 
     def __verificar_garcom_disponivel(self)-> bool:
-        return len(self.garcons) > 0 and len(self.garcons) <= self.config.get("quantidade_garcons")
+        return len(self.garcons) > 0 and len(self.garcons) <= self.config.get("amount_waiters")
 
     def __operacoes_garcom(self):
         mesa, pedidos_mesa = self.__criar_mesa_com_pessoas()
@@ -48,7 +48,7 @@ class RestauranteProducer:
 
 
     def __definir_garcons(self):
-        for i in range(self.config.get("quantidade_garcons")):
+        for i in range(self.config.get("amount_waiters")):
             id = i + 1
             garcom = Garcom(id, self.producer)
             self.garcons.append(garcom)
@@ -58,7 +58,7 @@ class RestauranteProducer:
 
         pedidos = []
 
-        for nome in range(self.config.get("quantidade_pessoas_por_mesa")):
+        for nome in range(self.config.get("number_people_per_table")):
             nome_cliente = "Pessoa "+ str(nome + 1)
             cliente = Cliente(nome_cliente)
             mesa.receber_cliente(cliente)
@@ -78,7 +78,7 @@ class RestauranteProducer:
 
 
     def execute(self):
-        quantidade_mesas = self.config.get("quantidade_mesas")
+        quantidade_mesas = self.config.get("amount_tables")
 
         self.__definir_garcons()
         
