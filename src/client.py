@@ -1,13 +1,13 @@
-from src.pedido import Pedido
+from src.order import Order
 
 
-class Cliente:
+class Client:
     def __init__(self, cliente) -> None:
         self.cliente = cliente
     
-    def realiza_pedido(self, dados_pedido: dict) -> Pedido:
+    def realiza_pedido(self, dados_pedido: dict) -> Order:
         cliente: dict = self.cliente
-        pedido =  Pedido({
+        pedido =  Order({
             "cliente": cliente,
             "pedido": dados_pedido,
         })

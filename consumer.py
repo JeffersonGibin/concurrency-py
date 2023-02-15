@@ -1,5 +1,5 @@
 
-from src.cozinha import CozinhaConsumer
+from src.kitchen import Kitchen
 from src.adapters.consumer_rabbit import ConsumerRabbitMQ
 
 config = {
@@ -10,5 +10,5 @@ consumer_rabbitmq = ConsumerRabbitMQ({
     "queue": "order"
 })
 
-cozinha = CozinhaConsumer(config, consumer_rabbitmq)
+cozinha = Kitchen(config, consumer_rabbitmq)
 cozinha.execute()

@@ -3,7 +3,7 @@ from datetime import datetime
 import math
 import random
 
-class Pedido:
+class Order:
     def __init__(self, dados: dict) -> None:
         self.numero_pedido = math.ceil(random.randint(1, 999999))
         self.data = datetime.now().strftime("%d/%m/%Y %H:%M:%S"),

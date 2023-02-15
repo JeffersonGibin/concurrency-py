@@ -1,4 +1,4 @@
-from src.restaurante_producer import RestauranteProducer
+from src.restaurant import Restaurant
 from src.adapters.producer_rabbit import ProducerRabbitMQ
 
 config = {
@@ -17,5 +17,5 @@ producer = ProducerRabbitMQ({
     "routing_key": "order"
 })
 
-restaurante = RestauranteProducer(config, producer)
+restaurante = Restaurant(config, producer)
 restaurante.execute()

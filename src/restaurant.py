@@ -1,13 +1,13 @@
 import threading
 import time
 
-from src.cliente import Cliente
-from src.garcom import Garcom
-from src.mesa import Mesa
+from src.client import Client
+from src.waiter import Waiter
+from src.table import Table
 from src.adapters.producer_rabbit import ProducerRabbitMQ
 
 
-class RestauranteProducer:
+class Restaurant:
     def __init__(self, config: dict, producer: ProducerRabbitMQ) -> None:
         self.threads = []
         self.garcons = []
@@ -50,17 +50,17 @@ class RestauranteProducer:
     def __definir_garcons(self):
         for i in range(self.config.get("amount_waiters")):
             id = i + 1
-            garcom = Garcom(id, self.producer)
+            garcom = Waiter(id, self.producer)
             self.garcons.append(garcom)
 
     def __criar_mesa_com_pessoas(self):
-        mesa = Mesa()
+        mesa = Table()
 
         pedidos = []
 
         for nome in range(self.config.get("number_people_per_table")):
             nome_cliente = "Pessoa "+ str(nome + 1)
-            cliente = Cliente(nome_cliente)
+            cliente = Client(nome_cliente)
             mesa.receber_cliente(cliente)
 
             pedido = cliente.realiza_pedido([
@@ -115,7 +115,7 @@ class RestauranteProducer:
 
                         self.threads.remove(t)
                         proximo_garcom_id = len(self.garcons) + UM_GARCOM
-                        self.garcons.append(Garcom(proximo_garcom_id, self.producer))
+                        self.garcons.append(Waiter(proximo_garcom_id, self.producer))
 
                         print("\n\n########################### [Liberando Garçom] ###########################")
                         print("[X] Liberando Garçom para novos pedidos")

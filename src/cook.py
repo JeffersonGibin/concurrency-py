@@ -4,7 +4,7 @@ import time
 
 from src.adapters.consumer_rabbit import ConsumerRabbitMQ
 
-class Cozinheiro:
+class Cook:
     def __init__(self, cozinheiro_id: int, consumer: ConsumerRabbitMQ) -> None:
         self.cozinheiro_id = cozinheiro_id
         self.consumer_rabbitmq = consumer

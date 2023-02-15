@@ -1,15 +1,15 @@
 from ast import List
 from src.adapters.producer_rabbit import ProducerRabbitMQ
-from src.mesa import Mesa
-from src.pedido import Pedido
+from src.table import Table
+from src.order import Order
 
-class Garcom:
+class Waiter:
     def __init__(self, id: int, producer: ProducerRabbitMQ) -> None:
         self.pedidos = []
         self.id = id
         self.producer = producer
     
-    def anota_pedidos(self, pedido: Pedido, mesa: Mesa):
+    def anota_pedidos(self, pedido: Order, mesa: Table):
         pedido = pedido.get()
         cliente = pedido.get("cliente")
         data = pedido.get("data")
