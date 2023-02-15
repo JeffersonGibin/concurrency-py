@@ -32,7 +32,7 @@ If you wish, you can also view the messages directly through the RabbitMQ dashbo
 
 The `RabbitMQ` dashboard is available through port `15672`, accessible at the address `http://localhost:15672/`. The default username and password to access the dashboard are `rabbitmq` and `rabbitmq` .
 
-## Manager flow execution
+## Settings
 
 - **Consumer:** If you wish, you can set a new number of cooks.
   ```bash
