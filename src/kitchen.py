@@ -3,8 +3,8 @@ from src.cook import Cook
 from src.adapters.consumer_rabbit import ConsumerRabbitMQ
 
 class Kitchen:
-    def __init__(self, config: dict, consumer: ConsumerRabbitMQ) -> None:
-        self.config = config
+    def __init__(self, settings: dict, consumer: ConsumerRabbitMQ) -> None:
+        self.settings = settings
         self.consumer = consumer
     
     def cook_thread(self, cook_id: int):
@@ -12,7 +12,7 @@ class Kitchen:
         cook.start_production()
 
     def execute(self):
-        amount_cooks: int = self.config.get("amount_cooks")
+        amount_cooks: int = self.settings.get("amount_cooks")
 
         print(f"Wait Orders...")
 

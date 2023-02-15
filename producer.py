@@ -1,21 +1,21 @@
 from src.restaurant import Restaurant
 from src.adapters.producer_rabbit import ProducerRabbitMQ
 
-config = {
+settings = {
     "amount_tables": 50,
     "amount_waiters": 1,
     "number_people_per_table": 5
 }
 
-print("Config Execution")
-print(f"[X] Amount Tables: {config['amount_tables']}")
-print(f"[X] Amount Waiters: {config['amount_waiters']}")
-print(f"[X] Amount People per table: {config['number_people_per_table']}\n\n")
+print("Settings Execution")
+print(f"[X] Amount Tables: {settings['amount_tables']}")
+print(f"[X] Amount Waiters: {settings['amount_waiters']}")
+print(f"[X] Amount People per table: {settings['number_people_per_table']}\n\n")
 
 producer = ProducerRabbitMQ({
     "queue": "order",
     "routing_key": "order"
 })
 
-restaurante = Restaurant(config, producer)
+restaurante = Restaurant(settings, producer)
 restaurante.execute()

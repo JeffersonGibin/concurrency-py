@@ -4,8 +4,8 @@ from pika import PlainCredentials, BlockingConnection, ConnectionParameters
 from src.interfaces.ProducerInterface import Producer
 
 class ProducerRabbitMQ(Producer):
-    def __init__(self, config) -> None:
-        self.config = config
+    def __init__(self, settings) -> None:
+        self.settings = settings
 
     def publish(self, payload: dict):
          # Conecte-se ao servidor RabbitMQ
@@ -14,12 +14,12 @@ class ProducerRabbitMQ(Producer):
         channel = connection.channel()
         
         # Declaração da Fila de Pedidos
-        queue_name = self.config.get("queue")
+        queue_name = self.settings.get("queue")
         channel.queue_declare(queue=queue_name)
         
         # Envia o Pedido para a Fila
         payload= json.dumps(payload)
         channel.basic_publish(exchange='',
-                            routing_key=self.config.get("routing_key"),
+                            routing_key=self.settings.get("routing_key"),
                             body=payload)
         connection.close()
