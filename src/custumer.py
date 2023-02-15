@@ -1,14 +1,14 @@
 from src.order import Order
 
 
-class Client:
+class Custumer:
     def __init__(self, name) -> None:
         self.name = name
     
     def make_order(self, order_dict: dict) -> Order:
-        client: dict = self.name
+        name = self.name
         order =  Order({
-            "client_name": client,
+            "custumer_name": name,
             "order": order_dict,
         })
 

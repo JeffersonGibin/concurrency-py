@@ -1,7 +1,7 @@
 import threading
 import time
 
-from src.client import Client
+from src.custumer import Custumer
 from src.waiter import Waiter
 from src.table import Table
 from src.adapters.producer_rabbit import ProducerRabbitMQ
@@ -60,7 +60,7 @@ class Restaurant:
 
         for nome in range(self.config.get("number_people_per_table")):
             nome_cliente = "Pessoa "+ str(nome + 1)
-            cliente = Client(nome_cliente)
+            cliente = Custumer(nome_cliente)
             mesa.accommodate_customer(cliente)
 
             pedido = cliente.make_order([
