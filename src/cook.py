@@ -5,32 +5,32 @@ import time
 from src.adapters.consumer_rabbit import ConsumerRabbitMQ
 
 class Cook:
-    def __init__(self, cozinheiro_id: int, consumer: ConsumerRabbitMQ) -> None:
-        self.cozinheiro_id = cozinheiro_id
+    def __init__(self, cook_id: int, consumer: ConsumerRabbitMQ) -> None:
+        self.cook_id = cook_id
         self.consumer_rabbitmq = consumer
 
     
-    def comeca_producao(self):
+    def start_production(self):
 
         def callback(ch, method, properties, body: str):
-            pedido = json.loads(body.decode())
+            order = json.loads(body.decode())
 
-            if pedido:
-                identificacao_cozinheiro = self.cozinheiro_id
-                numero_pedido = pedido['numero_pedido']
-                numero_mesa = pedido["mesa"]
-                dados_pedidos = pedido.get("pedido")
+            if order:
+                cook_id = self.cook_id
+                order_number = order['order_number']
+                table_number = order["table_number"]
+                orders = order.get("order_itens")
 
-                print(f"Cozinheiro {str(identificacao_cozinheiro)} RECEBEU o pedido N° {numero_pedido} da mesa N° {numero_mesa}")
+                print(f"Cook {str(cook_id)} RECEIVE the order N° {order_number} from the table N° {table_number}")
 
 
-                for produto in dados_pedidos[0]:
-                    # Simula tempo de produção
+                for product in orders[0]:
+                    # Simulate time execution
                     time.sleep(2)
                 
-                print(f"Cozinheiro {identificacao_cozinheiro} TERMINOU o pedido N° {numero_pedido} da mesa N° {numero_mesa}")
+                print(f"Cook {cook_id} FINISH the order N° {order_number} from the table N° {table_number}")
             else:
-                print("Cozinheiro {identificacao_cozinheiro} está aguardando novos pedidos!!!!")
+                print("Cook {cook_id} is wait new Orders!!!!")
 
 
         self.consumer_rabbitmq.consumer(callback)

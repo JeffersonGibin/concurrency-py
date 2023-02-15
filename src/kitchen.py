@@ -9,7 +9,7 @@ class Kitchen:
     
     def cozinheiro_thread(self, cozinheiro_id: int):
         cozinheiro = Cook(cozinheiro_id, self.consumer)
-        cozinheiro.comeca_producao()
+        cozinheiro.start_production()
 
     def execute(self):
         quantidade_cozinheiros: int = self.config.get("amount_cooks")

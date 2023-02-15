@@ -11,17 +11,17 @@ class Waiter:
     
     def anota_pedidos(self, pedido: Order, mesa: Table):
         pedido = pedido.get()
-        cliente = pedido.get("cliente")
-        data = pedido.get("data")
-        dados_pedido = pedido.get("pedido")
-        numero_pedido = pedido.get("numero_pedido")
+        client_name = pedido.get("client_name")
+        date = pedido.get("date")
+        order_itens = pedido.get("order_itens")
+        numero_pedido = pedido.get("order_number")
        
         self.pedidos.append({
-            "mesa": mesa.mesa_id,
-            "cliente": cliente,
-            "numero_pedido": numero_pedido,
-            "data": data,
-            "pedido": dados_pedido
+            "table_number": mesa.mesa_id,
+            "client_name": client_name,
+            "order_number": numero_pedido,
+            "date": date,
+            "order_itens": order_itens
         })
 
     def enviar_pedido_cozinha(self):

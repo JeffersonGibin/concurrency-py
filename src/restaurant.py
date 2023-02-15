@@ -26,16 +26,16 @@ class Restaurant:
 
         for pedido in pedidos_mesa:
             dados_pedido = pedido.get()
-            numero_pedido = dados_pedido.get("numero_pedido")
+            order_number = dados_pedido.get("order_number")
 
-            print(f"[x] Garçom {garcom_id} está anotando o pedido {numero_pedido}")
+            print(f"[x] Garçom {garcom_id} está anotando o pedido {order_number}")
             garcom.anota_pedidos(pedido, mesa)
 
             tempo_simbolico = 0.0002 * garcom_id
             time.sleep(tempo_simbolico)
 
-            print(f"[x] Garçom {garcom_id} anotou o pedido {numero_pedido}")
-            print(f"[x] Garçom {garcom_id} enviou o pedido {numero_pedido} para cozinha")
+            print(f"[x] Garçom {garcom_id} anotou o pedido {order_number}")
+            print(f"[x] Garçom {garcom_id} enviou o pedido {order_number} para cozinha")
         
         garcom.enviar_pedido_cozinha()
         time.sleep(1)
