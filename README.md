@@ -7,7 +7,7 @@ A estrutura do projeto é composta por consumidores e produtores, responsáveis 
 
 
 <p align="center">
-  <img src="desenho.jpg" alt="DESENHO">
+  <img src="architecture.jpg" alt="ARCHTECTURE">
 </p>
 
 
