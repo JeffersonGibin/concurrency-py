@@ -13,7 +13,7 @@ class Waiter:
         order = order.get()
         custumer_name = order.get("custumer_name")
         date = order.get("date")
-        order_itens = order.get("order_itens")
+        order_items = order.get("order_items")
         order_number = order.get("order_number")
        
         self.orders.append({
@@ -21,7 +21,7 @@ class Waiter:
             "custumer_name": custumer_name,
             "order_number": order_number,
             "date": date,
-            "order_itens": order_itens
+            "order_items": order_items
         })
 
     def send_order_to_kitchen(self):

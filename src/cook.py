@@ -19,12 +19,12 @@ class Cook:
                 cook_id = self.cook_id
                 order_number = order['order_number']
                 table_number = order["table_number"]
-                order_itens = order.get("order_itens")
+                order_items = order.get("order_items")
 
                 print(f"Cook {str(cook_id)} RECEIVE the order N° {order_number} from the table N° {table_number}")
 
 
-                for product in order_itens:
+                for item in order_items:
                     # Simulate time execution
                     time.sleep(2)
                 
