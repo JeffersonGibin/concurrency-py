@@ -39,7 +39,7 @@ The project was developed in `Python` and uses `RabbitMQ` as a message broker.
 # Manager flow execution
 
 - **Consumer:** If you wish, you can set a new number of cooks.
-  - ```bash
+  ```bash
     RESTAURANT_KITCHEN_AMOUNT_COOKS=5 
   ```
 - **Producer:** If you wish, you can set a new number to tables, number of people per table, and too amount waiters.
