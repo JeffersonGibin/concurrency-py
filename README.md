@@ -35,3 +35,20 @@ The `RabbitMQ` dashboard is available through port `15672`, accessible at the ad
 ## Additional Information
 
 The project was developed in `Python` and uses `RabbitMQ` as a message broker.
+
+# Manager flow execution
+
+- **Consumer:** If you wish, you can set a new number of cooks.
+  - RESTAURANT_KITCHEN_AMOUNT_COOKS=5
+- **Producer:** If you wish, you can set a new number to tables, number of people per table, and too amount waiters.
+
+  ```bash
+      - RESTAURANT_AMOUNT_TABLES=50
+      - RESTAURANT_AMOUNT_WAITERS=1
+      - RESTAURANT_NUMBER_PEOPLE_PER_TABLE=5
+  ```
+
+For the new settings to work, run:
+
+`docker-compose down` : stop applications
+`docker-compose up --build` : start applications and re-build containers
