@@ -61,7 +61,7 @@ class Restaurant:
         for nome in range(self.config.get("number_people_per_table")):
             nome_cliente = "Pessoa "+ str(nome + 1)
             cliente = Client(nome_cliente)
-            mesa.receber_cliente(cliente)
+            mesa.accommodate_customer(cliente)
 
             pedido = cliente.make_order([
                 {

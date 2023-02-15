@@ -5,11 +5,11 @@ from src.client import Client
 
 class Table:
     def __init__(self) -> None:
-        self.clientes = []
-        self.mesa_id = math.ceil(random.randint(1, 15))
+        self.custumers = []
+        self.random_table_number = math.ceil(random.randint(1, 15))
 
-    def receber_cliente(self, cliente: Client) -> None:
-        self.clientes.append(cliente)
+    def accommodate_customer(self, custumer: Client) -> None:
+        self.custumers.append(custumer)
 
-    def clientes_mesa(self) -> list:
-        return self.clientes
+    def custumers(self) -> list:
+        return self.custumers

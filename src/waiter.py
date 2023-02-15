@@ -17,7 +17,7 @@ class Waiter:
         numero_pedido = pedido.get("order_number")
        
         self.pedidos.append({
-            "table_number": mesa.mesa_id,
+            "table_number": mesa.random_table_number,
             "client_name": client_name,
             "order_number": numero_pedido,
             "date": date,
