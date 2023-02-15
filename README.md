@@ -34,6 +34,8 @@ The `RabbitMQ` dashboard is available through port `15672`, accessible at the ad
 
 ## Settings
 
+Settings must be changed in docker-compose.yml
+
 - **Consumer:** If you wish, you can set a new number of cooks.
   ```bash
     RESTAURANT_KITCHEN_AMOUNT_COOKS=5 
