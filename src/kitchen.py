@@ -7,16 +7,16 @@ class Kitchen:
         self.config = config
         self.consumer = consumer
     
-    def cozinheiro_thread(self, cozinheiro_id: int):
-        cozinheiro = Cook(cozinheiro_id, self.consumer)
-        cozinheiro.start_production()
+    def cook_thread(self, cook_id: int):
+        cook = Cook(cook_id, self.consumer)
+        cook.start_production()
 
     def execute(self):
-        quantidade_cozinheiros: int = self.config.get("amount_cooks")
+        amount_cooks: int = self.config.get("amount_cooks")
 
-        print(f"Aguardando Pedidos...")
+        print(f"Wait Orders...")
 
-        for cozinheiro_id in range(quantidade_cozinheiros):
-            cozinheiro_id = cozinheiro_id + 1
-            thread_cozinheiro = threading.Thread(target=self.cozinheiro_thread, args=(cozinheiro_id,))
-            thread_cozinheiro.start()
+        for cook_id in range(amount_cooks):
+            cook_id = cook_id + 1
+            thread = threading.Thread(target=self.cook_thread, args=(cook_id,))
+            thread.start()
