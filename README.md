@@ -1,38 +1,37 @@
-## Concorrência em Python
-Esse projeto foi desenvolvido para simular concorrência com uma fila de mensagens, utilizando uma analogia clara com um restaurante.
+## Concurrency in Python
+This project was developed to simulate concurrency with a message queue, using a clear analogy with a restaurant.
 
-## Estrutura
+## Structure
 
-A estrutura do projeto é composta por consumidores e produtores, responsáveis por garantir a concorrência na fila de mensagens.
-
+The structure of the project consists of consumers and producers, responsible for ensuring concurrency in the message queue.
 
 <p align="center">
   <img src="architecture.jpg" alt="ARCHTECTURE">
 </p>
 
 
-- **Producer:** os produtores são nossos garçons, caminhando pelo restaurante e recebendo os pedidos das mesas. Eles também trabalham de forma concorrente.
-- **Consumer:** os consumidores, representados pelos nossos cozinheiros na cozinha, trabalham de forma concorrente e ficam aguardando por novos pedidos dos clientes.
+- **Producer:** Producers are like our waiters, walking around the restaurant and taking orders from tables. They also work concurrently.
+- **Consumer:** Consumers, represented by our chefs in the kitchen, work concurrently and wait for new orders from customers.
 
-Cozinheiro e Garçom são Threads responsáveis pela concorrência.
+Chef and Waiter are Threads responsible for concurrency.
 
-- Cozinheiro (`Threads`)
-- Garçom (`Threads`)
+- Chef (`Threads`)
+- Waiter (`Threads`)
 
 
-## Como começar?
+## Getting Started
 
-Para iniciar a aplicação, basta executar o comando `docker-compose up`. 
-Você também pode acompanhar as execuções nos logs dos containers.
+To start the application, simply run the command `docker-compose up`. 
+You can also monitor the execution in the container logs.
 
 - `Producer: docker logs producer -f`
 - `Consumer: docker logs consumer -f`
 
 
-Se desejar, é possível visualizar as mensagens diretamente pelo painel do RabbitMQ.
+If you wish, you can also view the messages directly through the RabbitMQ dashboard.
 
-O painel do `RabbitMQ` está disponível através da porta `15672`, acessível pelo endereço `http://localhost:15672/`. O usuário e senha padrão para acessar o painel são `rabbitmq` e `rabbitmq`, respectivamente.
+The `RabbitMQ` dashboard is available through port `15672`, accessible at the address `http://localhost:15672/`. The default username and password to access the dashboard are `rabbitmq` and `rabbitmq` .
 
-## Informações adicionais
+## Additional Information
 
-O projeto foi desenvolvido em `Python` e utiliza o `RabbitMQ` como Broker de mensagens.
+The project was developed in `Python` and uses `RabbitMQ` as a message broker.
