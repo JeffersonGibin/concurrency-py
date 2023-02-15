@@ -2,14 +2,14 @@ from src.order import Order
 
 
 class Client:
-    def __init__(self, cliente) -> None:
-        self.cliente = cliente
+    def __init__(self, name) -> None:
+        self.name = name
     
-    def realiza_pedido(self, dados_pedido: dict) -> Order:
-        cliente: dict = self.cliente
-        pedido =  Order({
-            "cliente": cliente,
-            "pedido": dados_pedido,
+    def make_order(self, order_dict: dict) -> Order:
+        client: dict = self.name
+        order =  Order({
+            "client_name": client,
+            "order": order_dict,
         })
 
-        return pedido
+        return order

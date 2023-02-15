@@ -63,7 +63,7 @@ class Restaurant:
             cliente = Client(nome_cliente)
             mesa.receber_cliente(cliente)
 
-            pedido = cliente.realiza_pedido([
+            pedido = cliente.make_order([
                 {
                     "produto": "X-TUDO"
                 },
