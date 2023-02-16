@@ -50,8 +50,7 @@ Settings must be changed in docker-compose.yml
 
 For the new settings to work, run:
 
-`docker-compose down` : stop applications
-`docker-compose up --build` : start applications and re-build containers
+- `docker-compose up --build` : start applications and re-build containers
 
 ## Additional Information
 
