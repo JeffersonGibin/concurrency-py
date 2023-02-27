@@ -4,11 +4,11 @@ import time
 from src.custumer import Custumer
 from src.waiter import Waiter
 from src.table import Table
-from src.adapters.producer_rabbit import ProducerRabbitMQ
+from src.interfaces.producer_interface import Producer
 
 
 class Restaurant:
-    def __init__(self, settings: dict, producer: ProducerRabbitMQ) -> None:
+    def __init__(self, settings: dict, producer: Producer) -> None:
         self.threads = []
         self.waiters = []
         self.settings = settings

@@ -1,10 +1,10 @@
 from ast import List
-from src.adapters.producer_rabbit import ProducerRabbitMQ
+from src.interfaces.producer_interface import Producer
 from src.table import Table
 from src.order import Order
 
 class Waiter:
-    def __init__(self, id: int, producer: ProducerRabbitMQ) -> None:
+    def __init__(self, id: int, producer: Producer) -> None:
         self.orders = []
         self.id = id
         self.producer = producer

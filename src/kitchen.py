@@ -1,9 +1,9 @@
 import threading
+from src.interfaces.consumer_interface import Consumer
 from src.cook import Cook
-from src.adapters.consumer_rabbit import ConsumerRabbitMQ
 
 class Kitchen:
-    def __init__(self, settings: dict, consumer: ConsumerRabbitMQ) -> None:
+    def __init__(self, settings: dict, consumer: Consumer) -> None:
         self.settings = settings
         self.consumer = consumer
     
